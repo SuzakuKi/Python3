@@ -3,9 +3,15 @@
 В этой версии предполагается, что в файле может быть шаблон. """
 from flask import Flask, render_template
 import os
+
+
+#список участников конкурса 
+p_list = [('Виктор','Москва'), ('Владимир','Москва'), ('Юлиана','Казань'), ('Николай','Питер'),('Иван','Москва'),('Пётр','Самара')]
+
+
 def index():
     """ функция обрабатывает шаблон index.html и возвращает получившийся документ"""
-    return render_template('index.html')
+    return render_template('index.html', p_list = p_list , city= "Москва")
 
 
 folder = os.getcwd() # запомнили текущую рабочую папку
